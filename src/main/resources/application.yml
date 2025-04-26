@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: Nexum's Catalog
+    profiles:
+        active: local
+
+app:
+    name: Microservicio de Catalogo
+    version: 0.0.1
+    description: Microservicio de Catalogo de Nexum, para administrar informacion estatica
