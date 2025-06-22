@@ -5,10 +5,6 @@ import co.edu.udea.nexum.catalog.program.domain.model.Program;
 import co.edu.udea.nexum.catalog.program.domain.spi.ProgramPersistencePort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
@@ -28,7 +24,7 @@ class ProgramUseCaseTest {
 
     @Test
     void shouldSaveProgram() {
-        Program program = Program.Builder()
+        Program program = Program.builder()
                 .id(1L)
                 .name("Program Name")
                 .sniesCode("Description")
@@ -45,8 +41,8 @@ class ProgramUseCaseTest {
     @Test
     void shouldFindAllPrograms() {
         List<Program> programs = List.of(
-                Program.Builder().id(1L).name("Program 1").sniesCode("Desc 1").build(),
-                Program.Builder().id(2L).name("Program 2").sniesCode("Desc 2").build()
+                Program.builder().id(1L).name("Program 1").sniesCode("Desc 1").build(),
+                Program.builder().id(2L).name("Program 2").sniesCode("Desc 2").build()
         );
         when(persistencePort.findAll()).thenReturn(programs);
 
@@ -58,7 +54,7 @@ class ProgramUseCaseTest {
 
     @Test
     void shouldFindProgramById() {
-        Program program = Program.Builder()
+        Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
                 .sniesCode("Desc 1")
@@ -82,7 +78,7 @@ class ProgramUseCaseTest {
 
     @Test
     void shouldUpdateProgramById() {
-        Program program = Program.Builder()
+        Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
                 .sniesCode("Desc 1")
@@ -100,7 +96,7 @@ class ProgramUseCaseTest {
 
     @Test
     void shouldDeleteProgramById() {
-        Program program = Program.Builder()
+        Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
                 .sniesCode("Desc 1")

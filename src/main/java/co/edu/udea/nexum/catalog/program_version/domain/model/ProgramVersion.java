@@ -1,9 +1,11 @@
 package co.edu.udea.nexum.catalog.program_version.domain.model;
 
 import co.edu.udea.nexum.catalog.common.domain.model.Model;
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.common.domain.utils.contracts.BaseBuilder;
 import co.edu.udea.nexum.catalog.program.domain.model.Program;
 
+@Generated
 public class ProgramVersion implements Model<Long> {
     private Long id;
     private Program program;
@@ -61,10 +63,11 @@ public class ProgramVersion implements Model<Long> {
         this.endYear = endYear;
     }
 
-    public static ProgramVersionBuilder Builder() {
+    public static ProgramVersionBuilder builder() {
         return new ProgramVersionBuilder();
     }
 
+    @Generated
     public static class ProgramVersionBuilder implements BaseBuilder<ProgramVersion> {
         private Long id;
         private Program program;

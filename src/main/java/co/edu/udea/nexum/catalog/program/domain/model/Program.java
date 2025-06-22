@@ -1,8 +1,10 @@
 package co.edu.udea.nexum.catalog.program.domain.model;
 
 import co.edu.udea.nexum.catalog.common.domain.model.Model;
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.common.domain.utils.contracts.BaseBuilder;
 
+@Generated
 public class Program implements Model<Long> {
     private Long id;
     private String name;
@@ -24,7 +26,7 @@ public class Program implements Model<Long> {
         this.id = id;
     }
 
-    public static ProgramBuilder Builder() {
+    public static ProgramBuilder builder() {
         return new ProgramBuilder();
     }
 

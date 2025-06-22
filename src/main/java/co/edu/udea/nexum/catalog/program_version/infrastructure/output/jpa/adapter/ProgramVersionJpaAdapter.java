@@ -15,7 +15,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Generated
 @RequiredArgsConstructor
-public class ProgramVersionJpaAdapter extends BaseCrudAdapterImpl<Long, ProgramVersion, ProgramVersionEntity> implements ProgramVersionPersistencePort {
+public class ProgramVersionJpaAdapter
+        extends BaseCrudAdapterImpl<Long, ProgramVersion, ProgramVersionEntity>
+        implements ProgramVersionPersistencePort {
     private final ProgramVersionRepository programVersionRepository;
     private final ProgramVersionEntityMapper programVersionEntityMapper;
 
@@ -27,5 +29,16 @@ public class ProgramVersionJpaAdapter extends BaseCrudAdapterImpl<Long, ProgramV
     @Override
     protected CrudRepository<ProgramVersionEntity, Long> getRepository() {
         return programVersionRepository;
+    }
+
+    public boolean existByProgramIdAndVersion(Long id, Short version) {
+        return programVersionRepository.existsByProgram_IdAndVersion(id, version);
+    }
+
+    @Override
+    public ProgramVersion findByProgramIdAndVersion(Long id, Short version) {
+        return programVersionEntityMapper.toDomain(
+                programVersionRepository.findByVersionAndProgram_Id(version, id).orElse(null)
+        );
     }
 }

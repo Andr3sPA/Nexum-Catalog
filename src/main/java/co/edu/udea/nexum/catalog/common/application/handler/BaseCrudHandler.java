@@ -1,5 +1,6 @@
 package co.edu.udea.nexum.catalog.common.application.handler;
 
+
 import co.edu.udea.nexum.catalog.common.application.dto.request.BaseRequest;
 import co.edu.udea.nexum.catalog.common.application.dto.response.BaseResponse;
 

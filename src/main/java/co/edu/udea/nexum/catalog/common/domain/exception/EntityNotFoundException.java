@@ -1,8 +1,17 @@
 package co.edu.udea.nexum.catalog.common.domain.exception;
 
 import co.edu.udea.nexum.catalog.common.domain.utils.CommonDomainConstants;
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
+@Generated
 public class EntityNotFoundException extends RuntimeException {
+    public EntityNotFoundException(String message, boolean custom) {
+        super(message);
+        if (custom) log.error(message);
+    }
+
     public EntityNotFoundException(String className){
       super(String.format(
               CommonDomainConstants.ENTITY_NOT_FOUND_TEMPLATE_MESSAGE,

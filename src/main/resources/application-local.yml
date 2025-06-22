@@ -23,15 +23,18 @@ logging:
     level:
         web: trace
         org:
-            hibernate: debug
+            hibernate: info
             springframework:
                 web: trace
 
 server:
     servlet:
         context-path: /nexum
-    port: 8190
+    port: 8110
 
+nexum:
+    profile:
+        base_url: ${NEXUM_PROFILE_URL:http://localhost:8100/nexum/v1}
 
 allowed-origins:
     http://localhost:3000/,

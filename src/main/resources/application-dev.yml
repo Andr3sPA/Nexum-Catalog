@@ -23,7 +23,7 @@ logging:
     level:
         web: trace
         org:
-            hibernate: debug
+            hibernate: info
             springframework:
                 web: trace
 
@@ -34,9 +34,12 @@ jwt:
 server:
     servlet:
         context-path: ${APP_PATH:/nexum}
-    port: ${APP_PORT:8190}
+    port: ${APP_PORT:8110}
 
 
+nexum:
+    profile:
+        base_url: ${NEXUM_PROFILE_URL:http://localhost:8100/nexum/v1}
 
 allowed-origins:
     http://localhost:3000/,

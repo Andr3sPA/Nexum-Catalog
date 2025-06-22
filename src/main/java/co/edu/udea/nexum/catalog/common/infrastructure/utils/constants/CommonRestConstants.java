@@ -1,8 +1,9 @@
 package co.edu.udea.nexum.catalog.common.infrastructure.utils.constants;
 
-public class CommonRestConstants {
-    public static final String COMMON_ID_PATH = "/{id}";
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 
+@Generated
+public class CommonRestConstants {
     private CommonRestConstants() {
         throw new IllegalStateException("Utility class");
     }
@@ -22,5 +23,9 @@ public class CommonRestConstants {
     public static final String SWAGGER_SUMMARY_GET_HOME = "And endpoint to test if app is running";
 
     // COMMON CRUD MESSAGES
+
+    public static final String COMMON_ID_PATH = "/{id}";
+    public static final String HOME_MESSAGE = "Microservicio de catálogo de Nexum";
+
 
 }

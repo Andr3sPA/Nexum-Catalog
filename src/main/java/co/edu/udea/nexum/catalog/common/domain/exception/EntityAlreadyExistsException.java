@@ -1,7 +1,9 @@
 package co.edu.udea.nexum.catalog.common.domain.exception;
 
 import co.edu.udea.nexum.catalog.common.domain.utils.CommonDomainConstants;
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 
+@Generated
 public class EntityAlreadyExistsException extends RuntimeException {
     public EntityAlreadyExistsException(String message) {
         super(message);

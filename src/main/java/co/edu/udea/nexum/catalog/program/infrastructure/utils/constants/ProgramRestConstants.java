@@ -1,5 +1,11 @@
 package co.edu.udea.nexum.catalog.program.infrastructure.utils.constants;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@Generated
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProgramRestConstants {
     // Controller data
     public static final String PROGRAM_CONTROLLER_PATH = "/v1/programs";

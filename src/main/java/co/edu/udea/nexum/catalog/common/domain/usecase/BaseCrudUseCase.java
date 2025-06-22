@@ -10,6 +10,7 @@ import java.util.List;
 public abstract class BaseCrudUseCase<ID, MODEL extends Model<ID>> implements BaseCrudServicePort<ID, MODEL> {
     @Override
     public MODEL save(MODEL model) {
+        validateEntity(null, model);
         return getPersistencePort().save(model);
     }
 
@@ -29,6 +30,8 @@ public abstract class BaseCrudUseCase<ID, MODEL extends Model<ID>> implements Ba
     @Override
     public MODEL updateById(ID id, MODEL model) {
         findById(id);
+        validateEntity(id, model);
+        model.setId(id);
         return getPersistencePort().update(model);
     }
 
@@ -41,4 +44,5 @@ public abstract class BaseCrudUseCase<ID, MODEL extends Model<ID>> implements Ba
 
     protected abstract BaseCrudPersistencePort<ID, MODEL> getPersistencePort();
     protected abstract String getModelClassName();
+    protected abstract void validateEntity(ID currentId, MODEL model);
 }

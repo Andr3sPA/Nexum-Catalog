@@ -1,5 +1,8 @@
 package co.edu.udea.nexum.catalog.common.domain.utils;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
+
+@Generated
 public class CommonDomainConstants {
 
 
@@ -8,10 +11,11 @@ public class CommonDomainConstants {
     }
 
     // Exception messages
-    public static final String ENTITY_NOT_FOUND_TEMPLATE_MESSAGE = "Entity of type '%s' has not been found";
-    public static final String ENTITY_WITH_ATTRIBUTE_NOT_FOUND_TEMPLATE_MESSAGE = "Entity of type '%s' with %s '%s' has not been found";
-    public static final String ENTITY_WITH_ATTRIBUTE_ALREADY_EXIST_TEMPLATE_MESSAGE = "An entity of type '%s' with %s '%s' already exists";
+    public static final String ENTITY_NOT_FOUND_TEMPLATE_MESSAGE = "No se ha encontrado una entidad del tipo '%s'";
+    public static final String ENTITY_WITH_ATTRIBUTE_NOT_FOUND_TEMPLATE_MESSAGE = "No se ha encontrado una entidad del tipo '%s' con %s '%s'";
+    public static final String ENTITY_WITH_ATTRIBUTE_ALREADY_EXIST_TEMPLATE_MESSAGE = "Ya existe una entidad del tipo '%s' con %s '%s'";
 
-    public static final String INVALID_TOKEN_MESSAGE = "Given token is invalid";
-    public static final String EXPIRED_TOKEN_MESSAGE = "Given token has expired";
+    public static final Integer DEFAULT_PAGE_NUMBER = 0;
+    public static final Integer DEFAULT_PAGE_SIZE = 10;
+    public static final Boolean DEFAULT_ASCENDING = true;
 }

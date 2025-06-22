@@ -48,7 +48,7 @@ public class ProgramController implements BaseCrudController<Long, ProgramRespon
     })
     @Override
     @PostMapping
-    public ResponseEntity<ProgramResponse> save(@Valid ProgramRequest request) {
+    public ResponseEntity<ProgramResponse> save(@RequestBody @Valid ProgramRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(programHandler.save(request));
     }
 
@@ -105,7 +105,7 @@ public class ProgramController implements BaseCrudController<Long, ProgramRespon
     })
     @Override
     @PutMapping(COMMON_ID_PATH)
-    public ResponseEntity<ProgramResponse> updateById(@PathVariable Long id, ProgramRequest request) {
+    public ResponseEntity<ProgramResponse> updateById(@PathVariable Long id,@RequestBody @Valid ProgramRequest request) {
         return ResponseEntity.ok(programHandler.updateById(id, request));
     }
 

@@ -28,4 +28,11 @@ public class ProgramJpaAdapter extends BaseCrudAdapterImpl<Long, Program, Progra
     protected CrudRepository<ProgramEntity, Long> getRepository() {
         return programRepository;
     }
+
+    @Override
+    public Program findBySniesCode(String sniesCode) {
+        return programEntityMapper.toDomain(
+                programRepository.findBySniesCode(sniesCode)
+        );
+    }
 }

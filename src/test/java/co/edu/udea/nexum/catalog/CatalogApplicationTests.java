@@ -9,6 +9,8 @@ class CatalogApplicationTests {
 	/*
 	@Test
 	void contextLoads() {
-	}*/
+        // Somewhere over the rainbow
+	}
+	 */
 
 }

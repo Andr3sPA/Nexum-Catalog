@@ -5,6 +5,6 @@ spring:
         active: local
 
 app:
-    name: Microservicio de Catalogo
+    name: "Microservicio de Catálogo"
     version: 0.0.1
-    description: Microservicio de Catalogo de Nexum, para administrar informacion estatica
+    description: "Microservicio de Catálogo de Nexum, para administrar información estática"

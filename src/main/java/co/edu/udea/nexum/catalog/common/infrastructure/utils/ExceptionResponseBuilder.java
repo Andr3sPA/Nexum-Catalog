@@ -1,11 +1,13 @@
 package co.edu.udea.nexum.catalog.common.infrastructure.utils;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.common.infrastructure.configuration.advisor.dto.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 
+@Generated
 public class ExceptionResponseBuilder {
     private ExceptionResponseBuilder(){
         throw new IllegalStateException("Utility class");

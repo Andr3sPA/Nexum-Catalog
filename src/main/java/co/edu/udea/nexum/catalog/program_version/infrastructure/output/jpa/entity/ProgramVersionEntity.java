@@ -33,6 +33,6 @@ public class ProgramVersionEntity implements NexumEntity<Long> {
     @Column(name = "start_year", nullable = false)
     private Integer startYear;
 
-    @Column(name = "end_year", nullable = false)
+    @Column(name = "end_year")
     private Integer endYear;
 }
