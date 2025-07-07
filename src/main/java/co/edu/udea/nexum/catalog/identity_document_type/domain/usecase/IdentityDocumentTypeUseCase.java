@@ -27,6 +27,12 @@ public class IdentityDocumentTypeUseCase extends BaseCrudUseCase<Long, IdentityD
     }
 
     @Override
+    protected IdentityDocumentType patch(IdentityDocumentType original, IdentityDocumentType patch) {
+        if(patch.getDocumentType() != null) original.setDocumentType(patch.getDocumentType());
+        return original;
+    }
+
+    @Override
     protected void validateEntity(Long currentId, IdentityDocumentType model) {
         IdentityDocumentType existing = identityDocumentTypePersistencePort.findByType(model.getDocumentType());
         if (existing != null && !existing.getId().equals(currentId)) {

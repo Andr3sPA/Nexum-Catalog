@@ -8,12 +8,12 @@ import co.edu.udea.nexum.catalog.common.domain.utils.contracts.BaseBuilder;
 public class Program implements Model<Long> {
     private Long id;
     private String name;
-    private String sniesCode;
+    private String code;
 
     public Program(ProgramBuilder builder) {
         this.id = builder.id;
         this.name = builder.name;
-        this.sniesCode = builder.sniesCode;
+        this.code = builder.code;
     }
 
     @Override
@@ -38,18 +38,18 @@ public class Program implements Model<Long> {
         this.name = name;
     }
 
-    public String getSniesCode() {
-        return sniesCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setSniesCode(String sniesCode) {
-        this.sniesCode = sniesCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public static class ProgramBuilder implements BaseBuilder<Program> {
         private Long id;
         private String name;
-        private String sniesCode;
+        private String code;
 
         public ProgramBuilder id(Long id) {
             this.id = id;
@@ -61,8 +61,8 @@ public class Program implements Model<Long> {
             return this;
         }
 
-        public ProgramBuilder sniesCode(String sniesCode) {
-            this.sniesCode = sniesCode;
+        public ProgramBuilder code(String sniesCode) {
+            this.code = sniesCode;
             return this;
         }
 

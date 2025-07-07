@@ -26,6 +26,6 @@ public class ProgramEntity implements NexumEntity<Long> {
     @Column(name = "name", nullable = false)
     String name;
 
-    @Column(name = "snies_code", nullable = false)
-    String sniesCode;
+    @Column(name = "code", nullable = false)
+    String code;
 }

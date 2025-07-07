@@ -1,4 +1,4 @@
-package co.edu.udea.nexum.catalog.common.domain.utils;
+package co.edu.udea.nexum.catalog.common.domain.utils.constants;
 
 import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 
@@ -18,4 +18,5 @@ public class CommonDomainConstants {
     public static final Integer DEFAULT_PAGE_NUMBER = 0;
     public static final Integer DEFAULT_PAGE_SIZE = 10;
     public static final Boolean DEFAULT_ASCENDING = true;
+    public static final String FORBIDDEN_RESOURCE_ACCESS_ERROR_MESSAGE = "El usuario ha intentado acceder o modificar un recurso que no le pertenece";
 }

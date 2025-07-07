@@ -27,7 +27,7 @@ class ProgramUseCaseTest {
         Program program = Program.builder()
                 .id(1L)
                 .name("Program Name")
-                .sniesCode("Description")
+                .code("Description")
                 .build();
 
         when(persistencePort.save(program)).thenReturn(program);
@@ -41,8 +41,8 @@ class ProgramUseCaseTest {
     @Test
     void shouldFindAllPrograms() {
         List<Program> programs = List.of(
-                Program.builder().id(1L).name("Program 1").sniesCode("Desc 1").build(),
-                Program.builder().id(2L).name("Program 2").sniesCode("Desc 2").build()
+                Program.builder().id(1L).name("Program 1").code("Desc 1").build(),
+                Program.builder().id(2L).name("Program 2").code("Desc 2").build()
         );
         when(persistencePort.findAll()).thenReturn(programs);
 
@@ -57,7 +57,7 @@ class ProgramUseCaseTest {
         Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
-                .sniesCode("Desc 1")
+                .code("Desc 1")
                 .build();
 
         when(persistencePort.findById(1L)).thenReturn(program);
@@ -81,7 +81,7 @@ class ProgramUseCaseTest {
         Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
-                .sniesCode("Desc 1")
+                .code("Desc 1")
                 .build();
 
         when(persistencePort.findById(1L)).thenReturn(program);
@@ -99,7 +99,7 @@ class ProgramUseCaseTest {
         Program program = Program.builder()
                 .id(1L)
                 .name("Program 1")
-                .sniesCode("Desc 1")
+                .code("Desc 1")
                 .build();
 
         when(persistencePort.findById(1L)).thenReturn(program);

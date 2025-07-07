@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProgramRepository extends JpaRepository<ProgramEntity, Long> {
-    ProgramEntity findBySniesCode(String sniesCode);
+    ProgramEntity findByCode(String sniesCode);
 }

@@ -41,7 +41,7 @@ class ProgramJpaAdapterTest {
         program = Program.builder()
                 .id(ID)
                 .name(NAME)
-                .sniesCode(SNIES_CODE)
+                .code(SNIES_CODE)
                 .build();
 
         programEntity = ProgramEntity.builder()

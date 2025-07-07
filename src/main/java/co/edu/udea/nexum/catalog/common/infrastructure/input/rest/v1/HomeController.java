@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.CommonRestConstants.*;
+import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.CommonRestConstants.HOME_MESSAGE;
+import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.CommonRestConstants.SWAGGER_SUMMARY_GET_HOME;
 
 @Generated
 @RestController

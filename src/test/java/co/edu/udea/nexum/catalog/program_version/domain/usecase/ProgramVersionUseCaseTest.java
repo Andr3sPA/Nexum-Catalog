@@ -42,12 +42,12 @@ class ProgramVersionUseCaseTest {
 
     private final Program program = Program.builder()
             .id(ID)
-            .sniesCode(PROGRAM1_SNIES_CODE)
+            .code(PROGRAM1_SNIES_CODE)
             .name(PROGRAM1_NAME)
             .build();
     private final Program program2 = Program.builder()
             .id(ID_2)
-            .sniesCode(PROGRAM2_SNIES_CODE)
+            .code(PROGRAM2_SNIES_CODE)
             .name(PROGRAM2_NAME)
             .build();
     private final ProgramVersion programVersion = ProgramVersion.builder()

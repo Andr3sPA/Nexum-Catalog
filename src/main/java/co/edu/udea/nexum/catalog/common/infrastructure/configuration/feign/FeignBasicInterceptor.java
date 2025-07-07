@@ -1,13 +1,13 @@
 package co.edu.udea.nexum.catalog.common.infrastructure.configuration.feign;
 
 import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
-import co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.ConfigurationConstants;
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.ConfigurationConstants.*;
+import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.ConfigurationConstants.AUTHORIZATION_HEADER;
+import static co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.ConfigurationConstants.TOKEN_PREFIX;
 
 @Generated
 public class FeignBasicInterceptor {

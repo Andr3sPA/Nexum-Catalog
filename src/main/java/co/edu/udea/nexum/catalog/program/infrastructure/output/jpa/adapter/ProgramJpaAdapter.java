@@ -32,7 +32,7 @@ public class ProgramJpaAdapter extends BaseCrudAdapterImpl<Long, Program, Progra
     @Override
     public Program findBySniesCode(String sniesCode) {
         return programEntityMapper.toDomain(
-                programRepository.findBySniesCode(sniesCode)
+                programRepository.findByCode(sniesCode)
         );
     }
 }

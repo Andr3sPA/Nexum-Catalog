@@ -46,18 +46,18 @@ class ProgramHandlerImplTest {
         program = Program.builder()
                 .id(ID)
                 .name(NAME)
-                .sniesCode(SNIES_CODE)
+                .code(SNIES_CODE)
                 .build();
 
         programRequest = ProgramRequest.builder()
                 .name(NAME)
-                .sniesCode(SNIES_CODE)
+                .code(SNIES_CODE)
                 .build();
 
         programResponse = ProgramResponse.builder()
                 .id(ID)
                 .name(NAME)
-                .sniesCode(SNIES_CODE)
+                .code(SNIES_CODE)
                 .build();
     }
 

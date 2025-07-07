@@ -1,9 +1,9 @@
-package co.edu.udea.nexum.catalog.common.infrastructure.configuration;
+package co.edu.udea.nexum.catalog.security.infrastructure.configuration;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.security.domain.api.security.AuthServicePort;
 import co.edu.udea.nexum.catalog.security.domain.spi.security.AuthPersistencePort;
 import co.edu.udea.nexum.catalog.security.domain.usecase.AuthUseCase;
-import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Generated
 @Configuration
-public class CommonBeanConfiguration {
+public class SecurityBeanConfiguration {
     @Bean
     public AuthServicePort authServicePort(AuthPersistencePort authPersistencePort) {
         return new AuthUseCase(authPersistencePort);

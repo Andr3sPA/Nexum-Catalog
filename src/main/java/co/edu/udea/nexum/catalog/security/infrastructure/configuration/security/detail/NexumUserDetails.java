@@ -1,9 +1,9 @@
 package co.edu.udea.nexum.catalog.security.infrastructure.configuration.security.detail;
 
-import co.edu.udea.nexum.catalog.security.domain.api.security.AuthServicePort;
-import co.edu.udea.nexum.catalog.security.domain.model.AuthenticatedUser;
 import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.common.infrastructure.utils.constants.ConfigurationConstants;
+import co.edu.udea.nexum.catalog.security.domain.api.security.AuthServicePort;
+import co.edu.udea.nexum.catalog.security.domain.model.AuthenticatedUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

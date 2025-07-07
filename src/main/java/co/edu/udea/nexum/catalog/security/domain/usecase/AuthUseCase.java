@@ -1,9 +1,9 @@
 package co.edu.udea.nexum.catalog.security.domain.usecase;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.security.domain.api.security.AuthServicePort;
 import co.edu.udea.nexum.catalog.security.domain.model.AuthenticatedUser;
 import co.edu.udea.nexum.catalog.security.domain.spi.security.AuthPersistencePort;
-import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 
 @Generated
 public class AuthUseCase implements AuthServicePort {

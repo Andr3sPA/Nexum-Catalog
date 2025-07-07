@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import static co.edu.udea.nexum.catalog.common.domain.utils.CommonDomainConstants.*;
+import static co.edu.udea.nexum.catalog.common.domain.utils.constants.CommonDomainConstants.*;
 
 @Data
 @Builder

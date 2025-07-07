@@ -35,6 +35,11 @@ public class ProgramVersionUseCase extends BaseCrudUseCase<Long, ProgramVersion>
     }
 
     @Override
+    protected ProgramVersion patch(ProgramVersion original, ProgramVersion patch) {
+        return null;
+    }
+
+    @Override
     protected void validateEntity(Long currentId, ProgramVersion model) {
         Program program = programPersistencePort.findById(model.getProgram().getId());
         if (program == null) {

@@ -107,7 +107,7 @@ public class DataInitializer {
         log.info("Creating program {}: {}", name, sniesCode);
         return ProgramEntity.builder()
                 .name(name)
-                .sniesCode(sniesCode)
+                .code(sniesCode)
                 .build();
     }
 

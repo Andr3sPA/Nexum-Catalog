@@ -9,5 +9,5 @@ import lombok.Data;
 public class ProgramResponse implements BaseResponse {
     private Long id;
     private String name;
-    private String sniesCode;
+    private String code;
 }

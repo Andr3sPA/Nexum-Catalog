@@ -14,5 +14,5 @@ public class ProgramRequest implements BaseRequest {
     @NotNull(message = NOT_NULL_NAME_FIELD_MESSAGE)
     private String name;
     @NotNull(message =NOT_NULL_SNIES_CODE_FIELD_MESSAGE)
-    private String sniesCode;
+    private String code;
 }

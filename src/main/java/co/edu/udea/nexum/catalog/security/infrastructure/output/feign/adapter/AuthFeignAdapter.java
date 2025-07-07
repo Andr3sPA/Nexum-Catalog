@@ -1,8 +1,8 @@
 package co.edu.udea.nexum.catalog.security.infrastructure.output.feign.adapter;
 
+import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.security.domain.model.AuthenticatedUser;
 import co.edu.udea.nexum.catalog.security.domain.spi.security.AuthPersistencePort;
-import co.edu.udea.nexum.catalog.common.domain.utils.annotations.Generated;
 import co.edu.udea.nexum.catalog.security.infrastructure.output.feign.client.AuthFeign;
 import co.edu.udea.nexum.catalog.security.infrastructure.output.feign.mapper.AuthenticationResponseFeignMapper;
 import lombok.RequiredArgsConstructor;
