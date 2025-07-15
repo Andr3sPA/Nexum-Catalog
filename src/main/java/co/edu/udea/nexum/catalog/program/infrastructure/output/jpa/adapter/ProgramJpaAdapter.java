@@ -8,9 +8,12 @@ import co.edu.udea.nexum.catalog.program.domain.spi.ProgramPersistencePort;
 import co.edu.udea.nexum.catalog.program.infrastructure.output.jpa.entity.ProgramEntity;
 import co.edu.udea.nexum.catalog.program.infrastructure.output.jpa.mapper.ProgramEntityMapper;
 import co.edu.udea.nexum.catalog.program.infrastructure.output.jpa.repository.ProgramRepository;
+import co.edu.udea.nexum.catalog.program_version.domain.model.ProgramVersion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @Generated
@@ -30,9 +33,9 @@ public class ProgramJpaAdapter extends BaseCrudAdapterImpl<Long, Program, Progra
     }
 
     @Override
-    public Program findBySniesCode(String sniesCode) {
-        return programEntityMapper.toDomain(
-                programRepository.findByCode(sniesCode)
-        );
+    public Program findByCode(String sniesCode) {
+        return programRepository.findByCode(sniesCode)
+                .map(programEntityMapper::toDomain)
+                .orElse(null);
     }
 }

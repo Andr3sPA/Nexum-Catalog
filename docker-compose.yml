@@ -1,0 +1,26 @@
+services:
+    catalog-service:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: catalog-service
+        ports:
+            - "8110:8110"
+        environment:
+            SPRING_PROFILES_ACTIVE: dev
+            DB_HOST: 192.168.1.57
+            DB_PORT: 5432
+            DB_NAME: nexum
+            DB_USER: nexum_user
+            DB_PASSWORD: password
+            DB_SCHEMA: catalog
+            DB_DDL: update
+            APP_PATH: /nexum
+            APP_PORT: 8110
+            NEXUM_PROFILE_URL: http://host.docker.internal:8100/nexum/v1
+
+        networks:
+            - nexum-net
+
+networks:
+    nexum-net:

@@ -26,7 +26,7 @@ public class JobAreaRestConstants {
     public static final String SWAGGER_FIND_ALL_JOB_AREAS_SUCCESSFULLY = "Listado de áreas de primer empleo retornado exitosamente";
 
     // Find all by programId
-    public static final String PROGRAM_PROGRAM_ID = "/program/{programId}";
+    public static final String PROGRAM_PATH = "/program";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY = "Buscar todas las áreas de primer empleo asociadas a un programa";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY = "Listado de áreas de primer empleo del programa retornado exitosamente";
 

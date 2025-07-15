@@ -129,4 +129,13 @@ public class ProgramVersionController implements BaseCrudController<Long, Progra
         return ResponseEntity.ok(programVersionHandler.deleteById(id));
     }
 
+    @Operation(summary = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY)
+    @ApiResponse(responseCode = SWAGGER_CODE_OK, description = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY,
+            content = @Content(array = @ArraySchema(schema = @Schema(implementation = ProgramVersionResponse.class))))
+    @GetMapping(PROGRAM_PATH)
+    public ResponseEntity<List<ProgramVersionResponse>> findAllByProgramId(@RequestParam Long programId) {
+        return ResponseEntity.ok(programVersionHandler.findAllByProgramId(programId));
+    }
+
+
 }

@@ -4,6 +4,7 @@ import co.edu.udea.nexum.catalog.program_version.infrastructure.output.jpa.entit
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -11,4 +12,6 @@ public interface ProgramVersionRepository extends JpaRepository<ProgramVersionEn
     boolean existsByProgram_IdAndVersion(Long programId, Short version);
 
     Optional<ProgramVersionEntity> findByVersionAndProgram_Id(Short version, Long programId);
+
+    List<ProgramVersionEntity> findAllByProgram_Id(Long programId);
 }

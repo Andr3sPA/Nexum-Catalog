@@ -102,8 +102,8 @@ public class ProgramCompetencyController implements BaseCrudController<Long, Pro
     @Operation(summary = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY)
     @ApiResponse(responseCode = SWAGGER_CODE_OK, description = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY,
             content = @Content(array = @ArraySchema(schema = @Schema(implementation = ProgramCompetencyResponse.class))))
-    @GetMapping(PROGRAM_PROGRAM_ID)
-    public ResponseEntity<List<ProgramCompetencyResponse>> findAllByProgramId(@PathVariable Long programId) {
+    @GetMapping(PROGRAM_PATH)
+    public ResponseEntity<List<ProgramCompetencyResponse>> findAllByProgramId(@RequestParam Long programId) {
         return ResponseEntity.ok(handler.findAllByProgramId(programId));
     }
 }

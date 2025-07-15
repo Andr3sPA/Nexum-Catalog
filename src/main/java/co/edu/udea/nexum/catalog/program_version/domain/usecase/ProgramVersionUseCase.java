@@ -10,6 +10,8 @@ import co.edu.udea.nexum.catalog.program_version.domain.api.ProgramVersionServic
 import co.edu.udea.nexum.catalog.program_version.domain.model.ProgramVersion;
 import co.edu.udea.nexum.catalog.program_version.domain.spi.ProgramVersionPersistencePort;
 
+import java.util.List;
+
 import static co.edu.udea.nexum.catalog.program_version.domain.utils.constants.ProgramVersionDomainConstants.PROGRAM_VERSION_ALREADY_EXISTS_MESSAGE_TEMPLATE;
 
 public class ProgramVersionUseCase extends BaseCrudUseCase<Long, ProgramVersion> implements ProgramVersionServicePort {
@@ -58,4 +60,8 @@ public class ProgramVersionUseCase extends BaseCrudUseCase<Long, ProgramVersion>
         }
     }
 
+    @Override
+    public List<ProgramVersion> findAllByProgramId(Long programId) {
+        return programVersionPersistencePort.findAllByProgramId(programId);
+    }
 }

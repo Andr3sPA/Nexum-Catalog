@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Generated
 @RequiredArgsConstructor
@@ -37,8 +39,16 @@ public class ProgramVersionJpaAdapter
 
     @Override
     public ProgramVersion findByProgramIdAndVersion(Long id, Short version) {
-        return programVersionEntityMapper.toDomain(
-                programVersionRepository.findByVersionAndProgram_Id(version, id).orElse(null)
+
+        return programVersionRepository.findByVersionAndProgram_Id(version, id)
+                .map(programVersionEntityMapper::toDomain)
+                .orElse(null);
+    }
+
+    @Override
+    public List<ProgramVersion> findAllByProgramId(Long programId) {
+        return programVersionEntityMapper.toDomains(
+                programVersionRepository.findAllByProgram_Id(programId)
         );
     }
 }

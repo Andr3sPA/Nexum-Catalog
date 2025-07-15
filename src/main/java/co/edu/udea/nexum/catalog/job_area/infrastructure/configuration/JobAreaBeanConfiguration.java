@@ -12,11 +12,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JobAreaBeanConfiguration {
 
-    @Bean
-    public JobAreaServicePort jobAreaServicePort(
-            JobAreaPersistencePort jobAreaPersistencePort,
-            ProgramPersistencePort programPersistencePort
-    ) {
-        return new JobAreaUseCase(jobAreaPersistencePort, programPersistencePort);
-    }
+@Bean
+public JobAreaServicePort jobAreaServicePort(
+        JobAreaPersistencePort jobAreaPersistencePort,
+        ProgramPersistencePort programPersistencePort
+) {
+    return new JobAreaUseCase(jobAreaPersistencePort, programPersistencePort);
+}
 }

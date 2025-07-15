@@ -34,7 +34,7 @@ public class ProgramUseCase extends BaseCrudUseCase<Long, Program> implements Pr
     }
 
     protected void validateEntity(Long currentId, Program program) {
-        Program foundProgram = programPersistencePort.findBySniesCode(program.getCode());
+        Program foundProgram = programPersistencePort.findByCode(program.getCode());
         if (foundProgram != null && !foundProgram.getId().equals(currentId)) {
             throw new EntityAlreadyExistsException(
                     Program.class.getSimpleName(),

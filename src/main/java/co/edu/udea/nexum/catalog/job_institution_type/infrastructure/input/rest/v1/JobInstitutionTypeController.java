@@ -102,8 +102,8 @@ public class JobInstitutionTypeController implements BaseCrudController<Long, Jo
     @Operation(summary = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY)
     @ApiResponse(responseCode = SWAGGER_CODE_OK, description = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY,
             content = @Content(array = @ArraySchema(schema = @Schema(implementation = JobInstitutionTypeResponse.class))))
-    @GetMapping(PROGRAM_PROGRAM_ID)
-    public ResponseEntity<List<JobInstitutionTypeResponse>> findAllByProgramId(@PathVariable Long programId) {
+    @GetMapping(PROGRAM_PATH)
+    public ResponseEntity<List<JobInstitutionTypeResponse>> findAllByProgramId(@RequestParam Long programId) {
         return ResponseEntity.ok(jobInstitutionTypeHandler.findAllByProgramId(programId));
     }
 }

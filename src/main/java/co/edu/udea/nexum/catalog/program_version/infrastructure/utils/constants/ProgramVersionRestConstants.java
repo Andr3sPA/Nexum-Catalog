@@ -32,5 +32,11 @@ public class ProgramVersionRestConstants {
     // Delete by id
     public static final String SWAGGER_DELETE_PROGRAM_VERSION_BY_ID_SUMMARY = "Eliminar la versión del programa del id entregado";
     public static final String SWAGGER_PROGRAM_VERSION_DELETED_SUCCESSFULLY = "La versión del programa ha sido eliminada satisfactoriamente";
+
+    // Find all by ProgramId
+    public static final String PROGRAM_PATH = "/program";
+    public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY = "Buscar todas las versiones de programa asociadas a un programa";
+    public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY = "Listado de versiones del programa retornado exitosamente";
+
 }
 

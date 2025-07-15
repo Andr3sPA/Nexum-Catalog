@@ -21,7 +21,7 @@ public class JobInstitutionTypeRestConstants {
     public static final String SWAGGER_FIND_ALL_JOB_INSTITUTION_TYPES_SUMMARY = "Buscar todos los tipos de institución de primer empleo registrados";
     public static final String SWAGGER_FIND_ALL_JOB_INSTITUTION_TYPES_SUCCESSFULLY = "Listado de tipos de institución de primer empleo retornado exitosamente";
 
-    public static final String PROGRAM_PROGRAM_ID = "/program/{programId}";
+    public static final String PROGRAM_PATH = "/program";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY = "Buscar todos los tipos de institución de primer empleo asociados a un programa";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY = "Listado de tipos de institución de primer empleo del programa retornado exitosamente";
 

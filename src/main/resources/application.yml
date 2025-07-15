@@ -2,9 +2,9 @@ spring:
     application:
         name: Nexum's Catalog
     profiles:
-        active: local
+        active: ${SPRING_PROFILES_ACTIVE:dev}
 
 app:
-    name: "Microservicio de Catálogo"
+    name: Microservicio de Catalogo
     version: 0.0.1
-    description: "Microservicio de Catálogo de Nexum, para administrar información estática"
+    description: "Microservicio de Catalogo de Nexum, para administrar informacion estatica"

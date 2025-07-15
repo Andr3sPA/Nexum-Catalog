@@ -4,7 +4,9 @@ import co.edu.udea.nexum.catalog.program.infrastructure.output.jpa.entity.Progra
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ProgramRepository extends JpaRepository<ProgramEntity, Long> {
-    ProgramEntity findByCode(String sniesCode);
+    Optional<ProgramEntity> findByCode(String code);
 }

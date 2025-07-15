@@ -14,6 +14,8 @@ import co.edu.udea.nexum.catalog.program_version.domain.model.ProgramVersion;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProgramVersionHandlerImpl
@@ -37,4 +39,10 @@ public class ProgramVersionHandlerImpl
     protected BaseRequestMapper<ProgramVersion, ProgramVersionRequest> getRequestMapper() {
         return programVersionRequestMapper;
     }
+
+    @Override
+    public List<ProgramVersionResponse> findAllByProgramId(Long programId) {
+        return programVersionResponseMapper.toResponses(programVersionServicePort.findAllByProgramId(programId));
+    }
+
 }

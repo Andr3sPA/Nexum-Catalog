@@ -101,8 +101,8 @@ public class JobAreaController implements BaseCrudController<Long, JobAreaRespon
     @Operation(summary = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY)
     @ApiResponse(responseCode = SWAGGER_CODE_OK, description = SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY,
             content = @Content(array = @ArraySchema(schema = @Schema(implementation = JobAreaResponse.class))))
-    @GetMapping(PROGRAM_PROGRAM_ID)
-    public ResponseEntity<List<JobAreaResponse>> findAllByProgramId(@PathVariable Long programId) {
+    @GetMapping(PROGRAM_PATH)
+    public ResponseEntity<List<JobAreaResponse>> findAllByProgramId(@RequestParam Long programId) {
         return ResponseEntity.ok(jobAreaHandler.findAllByProgramId(programId));
     }
 }

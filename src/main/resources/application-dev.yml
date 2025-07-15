@@ -1,6 +1,6 @@
 spring:
     datasource:
-        url: jdbc:postgresql://${DB_HOST:localhst}:${DB_PORT:5432}/${DB_NAME:neum}
+        url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:nexum}
         username: ${DB_USER:nexum_user}
         password: ${DB_PASSWORD:password}
         driver-class-name: org.postgresql.Driver
@@ -25,11 +25,7 @@ logging:
         org:
             hibernate: info
             springframework:
-                web: trace
-
-jwt:
-    secret_key: ${JTW_TOKEN:0a07c69f2688f2dd628dd606378c848bed9dd8472f157604f36e18a0f84ef787}
-    expiration_time: ${JWT_EXPIRATION_TIME:86400000}
+                web: info
 
 server:
     servlet:
@@ -42,5 +38,4 @@ nexum:
         base_url: ${NEXUM_PROFILE_URL:http://localhost:8100/nexum/v1}
 
 allowed-origins:
-    http://localhost:3000/,
-    http://localhost:5173/,
+    http://localhost:3000/

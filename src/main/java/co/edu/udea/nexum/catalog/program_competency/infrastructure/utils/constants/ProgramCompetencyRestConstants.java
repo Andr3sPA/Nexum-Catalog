@@ -26,7 +26,7 @@ public class ProgramCompetencyRestConstants {
     public static final String SWAGGER_FIND_ALL_PROGRAM_COMPETENCIES_SUCCESSFULLY = "Listado de competencias del programa retornado exitosamente";
 
     // Find all by ProgramId
-    public static final String PROGRAM_PROGRAM_ID = "/program/{programId}";
+    public static final String PROGRAM_PATH = "/program";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUMMARY = "Buscar todas las competencias asociadas a un programa";
     public static final String SWAGGER_FIND_ALL_BY_PROGRAM_ID_SUCCESSFULLY = "Listado de competencias del programa retornado exitosamente";
 
