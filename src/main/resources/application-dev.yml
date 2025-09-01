@@ -1,41 +1,44 @@
 spring:
-    datasource:
-        url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:nexum}
-        username: ${DB_USER:nexum_user}
-        password: ${DB_PASSWORD:password}
-        driver-class-name: org.postgresql.Driver
-        hikari:
-            schema: ${DB_SCHEMA:catalog}
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:nexum}?sslmode=require&channelBinding=require
+    username: ${DB_USER:nexum_user}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: ${DB_SCHEMA:catalog}
 
-    jpa:
-        hibernate:
-            ddl-auto: ${DB_DDL:update}
-            naming:
-                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-        properties:
-            hibernate:
-                format_sql: true
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-        show-sql: true
-        database: postgresql
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_DDL:update}
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: ${DB_SCHEMA:catalog}
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    database: postgresql
+
+  output:
+    ansi:
+      enabled: ALWAYS
 
 logging:
-    level:
-        web: trace
-        org:
-            hibernate: info
-            springframework:
-                web: info
+  level:
+    web: trace
+    org:
+      hibernate: info
+      springframework:
+        web: info
 
 server:
-    servlet:
-        context-path: ${APP_PATH:/nexum}
-    port: ${APP_PORT:8110}
-
+  servlet:
+    context-path: ${APP_PATH:/nexum}
+  port: ${APP_PORT:8110}
 
 nexum:
-    profile:
-        base_url: ${NEXUM_PROFILE_URL:http://localhost:8100/nexum/v1}
+  profile:
+    base_url: ${NEXUM_PROFILE_URL:http://localhost:8100/nexum/v1}
 
-allowed-origins:
-    http://localhost:3000/
+allowed-origins: http://localhost:3000/
