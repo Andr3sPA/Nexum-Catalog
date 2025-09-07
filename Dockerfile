@@ -1,5 +1,7 @@
 FROM eclipse-temurin:21-jdk-alpine as build
 WORKDIR /app
+COPY . .
+RUN ./gradlew clean build -x test
 COPY ./build/libs/catalog-0.0.1-SNAPSHOT.jar app.jar
 
 FROM eclipse-temurin:21-jre-alpine
