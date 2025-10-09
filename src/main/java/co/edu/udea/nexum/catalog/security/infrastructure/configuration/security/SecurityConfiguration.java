@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -48,6 +49,17 @@ public class SecurityConfiguration {
             "/v1/home",
             "/v1/identity-document-types/**",
             AUTH_PATH,
+
+    };
+
+    private static final String[] PUBLIC_GET_PATHS = {
+
+            // For opportunity service
+            "/v1/programs/**",
+            "/v1/salary-ranges/**",
+            "/v1/program-competencies/**",
+            "/v1/job-areas/**",
+            "/v1/innovation-process-types/**",
     };
 
     @Bean
@@ -58,13 +70,12 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers(AUTH_WHITELIST).permitAll();
                     auth.requestMatchers(AUTH_PATH).permitAll();
+                    auth.requestMatchers(HttpMethod.GET, PUBLIC_GET_PATHS).permitAll();
                     auth.anyRequest().authenticated();
                 })
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
-                .exceptionHandling(handler ->
-                        handler.authenticationEntryPoint(jwtAuthenticationEntryPoint))
+                .exceptionHandling(handler -> handler.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
     }
@@ -82,8 +93,7 @@ public class SecurityConfiguration {
                 ALLOWED_METHOD_GET,
                 ALLOWED_METHOD_PUT,
                 ALLOWED_METHOD_DELETE,
-                ALLOWED_METHOD_OPTIONS
-        ));
+                ALLOWED_METHOD_OPTIONS));
         source.registerCorsConfiguration(CORS_CONFIGURATION_PATHS_PATTERN, configuration);
         return source;
     }
